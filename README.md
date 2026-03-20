@@ -39,11 +39,15 @@ activity inference in smart homes.
 
 ## Pipeline
 
+The overall pipeline of our method is shown below. Starting from aggregated encrypted smart home traffic, we first extract temporal traffic features and organize them into fixed time bins. The processed sequence is then fed into the disaggregation model to recover per device traffic traces, which can further support device activity inference and occupancy inference.
+
 <p align="center">
   <img src="images/pipeline.png" alt="Overall pipeline" width="900">
 </p>
 
 ## Framework
+
+Our architecture takes aggregated traffic features and auxiliary temporal information as input, and learns device aware representations for traffic allocation and reconstruction. By combining temporal context modeling with device specific priors, the model produces per device traffic predictions from the mixed encrypted traffic stream.
 
 <p align="center">
   <img src="images/arch.png" alt="Model architecture" width="900">
@@ -61,4 +65,3 @@ and a Real-Home VPN Dataset.
 ```text
 src/        core model and utility code
 scripts/    training and evaluation scripts
-
